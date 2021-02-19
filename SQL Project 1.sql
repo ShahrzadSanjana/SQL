@@ -39,4 +39,31 @@ Where city IN ('Paris', 'Rome');
 SELECT *
 FROM salesman
 WHERE city NOT IN ('Paris', 'Rome');
+                                                                                      
+                                                                                      
+/*5. Write a SQL statement to find those salesmen with all information who gets the commission within a range of 0.12 and 0.14.*/
+
+SELECT *
+FROM salesman
+WHERE commission BETWEEN '0.12' AND '0.14';
+
+/*6. Write a SQL statement to find those salesmen with all other information and name started with any letter within 'A' and 'K'.*/
+
+SELECT *
+FROM salesman
+WHERE name BETWEEN 'A%' AND 'K%';
+
+
+/* 7. Write a SQL statement to find those salesmen with all other information and name started with other than any latter within 'A' and 'L'.*/
+
+SELECT *
+FROM salesman
+WHERE name NOT BETWEEN  'A%' AND 'L%';
+
+
+/*8. Write a SQL statement to find those salesmen with all information whose name containing the 1st character is 'N' and the 4th character is 'l' and rests may be any character.  */
+
+SELECT *
+FROM salesman
+WHERE name LIKE 'N__l %';
 
