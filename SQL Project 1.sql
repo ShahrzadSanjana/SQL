@@ -22,19 +22,19 @@ SELECT * FROM salesman;
 
 
 
-/* 1. Write a SQL statement to find those salesmen with all information who come from the city either Paris or Rome. */
+/* 2. Write a SQL statement to find those salesmen with all information who come from the city either Paris or Rome. */
 
 SELECT * 
 FROM salesman
 Where city = 'Paris' OR city ='Rome';           
 
-/*2. Write a query to filter those salesmen with all information who comes from any of the cities Paris and Rome.*/  
+/*3. Write a query to filter those salesmen with all information who comes from any of the cities Paris and Rome.*/  
 
 SELECT *
 FROM salesman
 Where city IN ('Paris', 'Rome');
 
-/* 3. Write a query to produce a list of salesman_id, name, city and commission of each salesman who live in cities other than Paris and Rome.  */
+/* 4. Write a query to produce a list of salesman_id, name, city and commission of each salesman who live in cities other than Paris and Rome.  */
 
 SELECT *
 FROM salesman
