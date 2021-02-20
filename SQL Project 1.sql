@@ -1,3 +1,5 @@
+-- https://www.w3resource.com/sql-exercises/sql-wildcard-special-operators.php --
+
 CREATE TABLE salesman (salesman_id INTEGER, name text, city text, commission decimal (4,1));
 
 INSERT INTO salesman Value (5001, 'James Hoog', 'New York', 0.15),
