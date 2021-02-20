@@ -5,7 +5,7 @@ FROM world;
 
 -- List all the continents - just once each. --
 
-SELECT COUNT(DISTINCT continent)  -- Leave no spaces between 'COUNT' and the parentheses --
+SELECT DISTINCT continent  -- Leave no spaces between 'COUNT' and the parentheses --
 FROM world;
 
 -- Give the total GDP of Africa --
