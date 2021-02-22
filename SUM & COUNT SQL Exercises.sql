@@ -1,3 +1,5 @@
+-- https://sqlzoo.net/wiki/SUM_and_COUNT --
+
 -- Show the total population of the world. --
 
 SELECT SUM(population) -- Leave no spaces between 'SUM' and the parentheses --
