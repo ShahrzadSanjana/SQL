@@ -47,7 +47,7 @@ SELECT SUM(price) FROM stocks;
 /* Group the data by stock and repeat. How do the stocks compare to each other? */
 SELECT name, AVG (price) FROM stocks GROUP BY name;
 /*  As predicted, Microsoft's average price is highest since it has the highest prices off al companies on the list. 
-Bank of America has the lowest average price since its prices are the lowest in the table/. */
+Bank of America has the lowest average price since its prices are the lowest in the table. */
 SELECT name, COUNT(price) FROM stocks GROUP BY name;
 SELECT name, SUM(price) FROM stocks GROUP BY name;
 SELECT name, MAX(price) FROM stocks GROUP BY name;
@@ -57,6 +57,20 @@ SELECT name, MIN(price) FROM stocks GROUP BY name;
 /* Group the data by day or hour of day. Does day of week or time of day impact prices? */
 
 -- at closing: --
-SELECT name, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name; 
--- This SQL statement selects the daily closing price for each of the five stocks 
 
+SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
+
+-- or, find the daily average of all prices for each stock (more tedious than the above) --
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-09, %' GROUP BY name;
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;	
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-23, %' GROUP BY name;	
+
+
+-- By hour of the day --
+
+SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 9:00:00' GROUP BY name;
+SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 12:00:00' GROUP BY name;
+SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
+/* From the result set of the previous three lines of code, average stock prices for 3 of the 5 stocks (AMD, BAC, MSFT) falls from the beginning of trading to 12:00:00. 
+GM's and KSS's prices both rise during this same period, on average. Between 12:00:00 and 16:00:00, AMD, BAC, and MSFT increase back to, or even exceed their opening trading price. 
+GM and KSS continue with their upward momentum from earlier in the day during this period. */ 
