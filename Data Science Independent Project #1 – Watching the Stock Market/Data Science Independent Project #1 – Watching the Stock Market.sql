@@ -46,7 +46,7 @@ SELECT SUM(price) FROM stocks;
 
 /* Group the data by stock and repeat. How do the stocks compare to each other? */
 SELECT name, AVG (price) FROM stocks GROUP BY name;
-/*  As predicted, Microsoft's average price is highest since it has the highest prices off al companies on the list. 
+/*  As predicted, Microsoft's average price is highest since it has the highest prices off all companies on the list. 
 Bank of America has the lowest average price since its prices are the lowest in the table. */
 SELECT name, COUNT(price) FROM stocks GROUP BY name;
 SELECT name, SUM(price) FROM stocks GROUP BY name;
