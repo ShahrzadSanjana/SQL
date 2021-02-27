@@ -64,7 +64,7 @@ SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP 
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-09, %' GROUP BY name;
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;	
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-23, %' GROUP BY name;	
-
+/* 
 
 -- By hour of the day --
 
@@ -74,3 +74,11 @@ SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP 
 /* From the result set of the previous three lines of code, average stock prices for 3 of the 5 stocks (AMD, BAC, MSFT) falls from the beginning of trading to 12:00:00. 
 GM's and KSS's prices both rise during this same period, on average. Between 12:00:00 and 16:00:00, AMD, BAC, and MSFT increase back to, or even exceed their opening trading price. 
 GM and KSS continue with their upward momentum from earlier in the day during this period. */ 
+
+
+/* Which of the rows have a price greater than the average of all prices in the dataset? */
+
+SELECT * FROM stocks
+WHERE price > (SELECT AVG(price) FROM stocks);
+-- All of Microsoft's stock prices during the period are above the average of all prices in the dataset. -- 
+
