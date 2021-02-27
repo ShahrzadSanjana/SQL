@@ -71,6 +71,7 @@ SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-23, %
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 9:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 12:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
+
 /* From the result set of the previous three lines of code, average stock prices for 3 of the 5 stocks (AMD, BAC, MSFT) falls from the beginning of trading to 12:00:00. 
 GM's and KSS's prices both rise during this same period, on average. Between 12:00:00 and 16:00:00, AMD, BAC, and MSFT increase back to, or even exceed their opening trading price. 
 GM and KSS continue with their upward momentum from earlier in the day during this period. */ 
