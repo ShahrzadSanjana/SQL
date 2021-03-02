@@ -13,7 +13,7 @@ Since stock prices reflect investors sentiment about the FUTURE performance of a
 /* Which rows have a price above 100? */
 SELECT * FROM stocks
 WHERE price > '100';
--- Microsoft's stock has a price that has been well above the $100 mark for the entire period. --
+-- Microsoft's stock has a price that has been well above the $100 mark throughout the entire period. --
 
 /* between 40 to 50, etc? */
 SELECT * FROM stocks
@@ -64,7 +64,7 @@ SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP 
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-09, %' GROUP BY name;
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;	
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-23, %' GROUP BY name;	
-/* 
+
 
 -- By hour of the day --
 
