@@ -83,3 +83,14 @@ SELECT * FROM stocks
 WHERE price > (SELECT AVG(price) FROM stocks);
 -- All of Microsoft's stock prices during the period are above the average of all prices in the dataset. -- 
 
+                                                                            /* Advanced Challenge */
+
+/* In addition to the built-in aggregate functions, explore ways to calculate other key statistics about the data, such as the median or variance. */
+
+-- Median --
+SELECT AVG(price) 
+FROM (SELECT price
+FROM stocks
+ORDER BY price
+LIMIT 2
+OFFSET (SELECT (COUNT(*) -1) / 2 FROM stocks));
