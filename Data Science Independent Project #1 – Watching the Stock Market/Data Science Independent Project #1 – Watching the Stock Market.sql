@@ -139,3 +139,4 @@ WHERE symbol = 'BAC';
 UPDATE stock_info
 SET industry = 'Semiconductors'
 WHERE symbol = 'AMD';                                                        
+                                                              -- END. --
