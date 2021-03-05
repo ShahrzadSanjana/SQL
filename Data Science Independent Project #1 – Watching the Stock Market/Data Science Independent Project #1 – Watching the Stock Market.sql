@@ -99,3 +99,10 @@ OFFSET (SELECT (COUNT(*) -1) / 2 FROM stocks));
 
 SELECT (SUM(price*price) - ((SUM(price)*SUM(price))/COUNT(*))) / (COUNT(*) -1) AS [Price Variance] FROM stocks;
         
+                                                          
+/* Now, we do not need to repeat both symbol and name for each row of price data. Instead, join the 2 tables in order to view more information on the stock with each row of price. */
+                                                          
+SELECT stock_prices.id, stock_info.symbol, stock_prices.datetime, stock_prices.price
+FROM stock_info
+JOIN stock_prices
+ON stock_info.id = stock_prices.id;
