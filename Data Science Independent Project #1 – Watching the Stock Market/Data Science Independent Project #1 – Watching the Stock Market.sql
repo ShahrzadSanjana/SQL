@@ -103,8 +103,8 @@ SELECT (SUM(price*price) - ((SUM(price)*SUM(price))/COUNT(*))) / (COUNT(*) -1) A
 Hint: You can use the SQL CREATE TABLE AS statement to create a table by copying the columns of an existing table. 
 Don’t forget to also drop certain columns from the original table and rename it. */              
                                                           
-CREATE TABLE stock_info 
-AS SELECT symbol, name
+CREATE TABLE stock_info AS 
+SELECT symbol, name
 FROM stocks;
 
 ALTER TABLE stocks RENAME TO stock_prices;
