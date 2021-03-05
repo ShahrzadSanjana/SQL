@@ -96,9 +96,20 @@ LIMIT 2
 OFFSET (SELECT (COUNT(*) -1) / 2 FROM stocks));
 
 -- Variance --
-
 SELECT (SUM(price*price) - ((SUM(price)*SUM(price))/COUNT(*))) / (COUNT(*) -1) AS [Price Variance] FROM stocks;
         
+
+/* Let’s refactor the data into 2 tables - stock_info to store general info about the stock itself (ie. symbol, name) and stock_prices to store the collected data on price (ie. symbol, datetime, price).
+Hint: You can use the SQL CREATE TABLE AS statement to create a table by copying the columns of an existing table. 
+Don’t forget to also drop certain columns from the original table and rename it. */              
+                                                          
+CREATE TABLE stock_info 
+AS SELECT symbol, name
+FROM stocks;
+
+ALTER TABLE stocks RENAME TO stock_prices;
+
+ALTER TABLE stock_prices DROP COLUMN name;                                                           
                                                           
 /* Now, we do not need to repeat both symbol and name for each row of price data. Instead, join the 2 tables in order to view more information on the stock with each row of price. */
                                                           
