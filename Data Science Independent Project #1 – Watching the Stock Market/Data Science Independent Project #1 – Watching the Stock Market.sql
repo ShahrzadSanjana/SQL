@@ -117,3 +117,25 @@ SELECT stock_prices.id, stock_info.symbol, stock_prices.datetime, stock_prices.p
 FROM stock_info
 JOIN stock_prices
 ON stock_info.id = stock_prices.id;
+                                                          
+                                                          
+/* Add more variables to the stock_info table and update the data (e.g., sector, industry, etc). */
+
+ALTER TABLE stock_info ADD COLUMN industry TEXT;
+
+UPDATE stock_info 
+SET industry = 'Automotive'
+WHERE symbol = 'GM'
+
+
+UPDATE stock_info
+SET industry = 'Technology'
+WHERE symbol = 'MSFT';
+
+UPDATE stock_info
+SET industry = 'Banking/Finance'
+WHERE symbol = 'BAC';
+
+UPDATE stock_info
+SET industry = 'Semiconductors'
+WHERE symbol = 'AMD';                                                        
