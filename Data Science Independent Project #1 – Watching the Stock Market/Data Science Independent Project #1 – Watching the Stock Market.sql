@@ -40,7 +40,7 @@ SELECT AVG(price) FROM stocks;
     -- The average of all prices is $93.88. -- 
     
 SELECT COUNT(price) FROM stocks;					
-    -- There are 150 entries in the 'stocks' table. -- 
+    -- There are 150 entries in the data. -- 
 
 SELECT SUM(price) FROM stocks;
 
@@ -55,6 +55,7 @@ SELECT name, COUNT(price) FROM stocks GROUP BY name;
 /* There are 150 stocks and accompanying prices in the data. */
 
 SELECT name, SUM(price) FROM stocks GROUP BY name;
+/* Bank of America's stock has the lowest sum of share prices at $1020.1, whilst Microsoft has the highest for the period, $7233.92. */ 
 SELECT name, MAX(price) FROM stocks GROUP BY name;
 SELECT name, MIN(price) FROM stocks GROUP BY name;
 
