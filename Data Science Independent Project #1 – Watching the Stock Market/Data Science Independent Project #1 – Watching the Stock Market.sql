@@ -27,9 +27,10 @@ ORDER BY price DESC;
 -- Microsoft achieved the highest stock price of any company on the list at $244.99 on February 12th, and Bank of America Corp. had the lowest of $32.72 on the 11th. --
 
 SELECT name, MIN(price) FROM stocks;
+/* Bank of America has the lowest share price in the data at $32.72 recorded on Febrauary 11th at 12:00PM. */
 
 SELECT name, MAX(price) FROM stocks;
-
+/* Microsoft has the highest share price at $244.99 recorded on February 12th at 16:00PM. */  
 
                                                                           	/* Intermediate Challenge */
 
@@ -45,10 +46,14 @@ SELECT SUM(price) FROM stocks;
 
 
 /* Group the data by stock and repeat. How do the stocks compare to each other? */
+
 SELECT name, AVG (price) FROM stocks GROUP BY name;
 /*  As predicted, Microsoft's average price is highest since it has the highest prices off all companies on the list. 
 Bank of America has the lowest average price since its prices are the lowest in the table. */
+
 SELECT name, COUNT(price) FROM stocks GROUP BY name;
+/* There are 150 stocks and accompanying prices in the data. */
+
 SELECT name, SUM(price) FROM stocks GROUP BY name;
 SELECT name, MAX(price) FROM stocks GROUP BY name;
 SELECT name, MIN(price) FROM stocks GROUP BY name;
