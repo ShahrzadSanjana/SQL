@@ -58,7 +58,7 @@ SELECT name, SUM(price) FROM stocks GROUP BY name;
 /* Bank of America's stock has the lowest sum of share prices at $1020.1, whilst Microsoft has the highest for the period, $7233.92. */ 
 
 SELECT name, MAX(price) FROM stocks GROUP BY name;
-/* 
+/* */
 SELECT name, MIN(price) FROM stocks GROUP BY name;
 
 
@@ -89,7 +89,7 @@ GM and KSS continue with their upward momentum from earlier in the day during th
 
 SELECT * FROM stocks
 WHERE price > (SELECT AVG(price) FROM stocks);
--- All of Microsoft's stock prices during the period are above the average of all prices in the dataset. -- 
+-- Only Microsoft's stock prices during the period were above the average of all prices in the dataset. -- 
 
                                                                           /* Advanced Challenge */
 
