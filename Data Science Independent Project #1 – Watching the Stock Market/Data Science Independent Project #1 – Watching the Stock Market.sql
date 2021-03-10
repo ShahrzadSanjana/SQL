@@ -93,7 +93,8 @@ SELECT * FROM stocks
 WHERE price > (SELECT AVG(price) FROM stocks);
 -- Only Microsoft's stock prices during the period were above the average of all prices in the dataset. -- 
 
-                                                                          /* Advanced Challenge */
+                                                                       
+                                                                       /* Advanced Challenge */
 
 /* In addition to the built-in aggregate functions, explore ways to calculate other key statistics about the data, such as the median or variance. */
 
@@ -123,11 +124,11 @@ ALTER TABLE stock_prices DROP COLUMN name;
                                                           
 /* Now, we do not need to repeat both symbol and name for each row of price data. Instead, join the 2 tables in order to view more information on the stock with each row of price. */
                                                           
-SELECT stock_prices.id, stock_info.symbol, stock_prices.datetime, stock_prices.price
+SELECT stock_prices.id, stock_prices.name, stock_info.symbol, stock_prices.datetime, stock_prices.price 
 FROM stock_info
 JOIN stock_prices
 ON stock_info.id = stock_prices.id;
-                                                          
+/* For this syntax, I used an Inner Join to return records that have matching values in the common 'id' column from both tables. */                                                          
                                                           
 /* Add more variables to the stock_info table and update the data (e.g., sector, industry, etc). */
 
