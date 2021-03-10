@@ -49,7 +49,7 @@ SELECT SUM(price) FROM stocks;
 
 SELECT name, AVG (price) FROM stocks GROUP BY name;
 /*  As predicted, Microsoft's average price is highest since it has the highest prices off all companies on the list. 
-Bank of America has the lowest average price since its prices are the lowest in the table. */
+Bank of America has the lowest average price since its prices are the lowest in the table for the period. */
 
 SELECT name, COUNT(price) FROM stocks GROUP BY name;
 /* There are 150 stocks and accompanying prices in the data. */
@@ -58,8 +58,10 @@ SELECT name, SUM(price) FROM stocks GROUP BY name;
 /* Bank of America's stock has the lowest sum of share prices at $1020.1, whilst Microsoft has the highest for the period, $7233.92. */ 
 
 SELECT name, MAX(price) FROM stocks GROUP BY name;
-/* */
+/* This syntax finds the highest price for EACH stock in the data. Microsoft's highest share price is higher than that of the other stocks. */
+
 SELECT name, MIN(price) FROM stocks GROUP BY name;
+/* This syntax finds the lowest price for EACH stock in the data. Bank of America's lowest share price is lower than that of the other stocks. */
 
 
 /* Group the data by day or hour of day. Does day of week or time of day impact prices? */
