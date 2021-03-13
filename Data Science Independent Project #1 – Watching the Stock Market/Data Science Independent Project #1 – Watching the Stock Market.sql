@@ -66,20 +66,24 @@ SELECT name, MIN(price) FROM stocks GROUP BY name;
 
 /* Group the data by day or hour of day. Does day of week or time of day impact prices? */
 
--- at closing: --
-
-SELECT name, datetime, price FROM stocks WHERE datetime BETWEEN '% 09 %' AND '% 23 %' AND datetime LIKE '% 16:00:00' GROUP BY name;
-
--- or, find the daily average of all prices for each stock (more tedious than the above) --
+-- find the daily average of all prices for each stock --
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-19, %' GROUP BY name;	
 SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-22, %' GROUP BY name;
+
+/* For most stocks (apart from Bank of America and Kohl’s), the first trading day of the week is the day at which stock prices are at their highest. 
+From then onwards, though, it is difficult to establish a solid trend shared by the stocks since all (apart from Bank of America) are up and down during the middle period of the week. 
+The exception to this is Bank of America’s tock whose price actually increases during the week, and ends the week with a higher price than the one it began with.
+
+In all, it stands to reason that there may be, at best, only a week correlation between the day of the week and stock prices as prices for most stocks are higher at tht start of the week than at the end.
+*/  
 
 -- By hour of the day --
 
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 9:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 12:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
+
 
 /* From the result set of the previous three lines of code, average stock prices for 3 of the 5 stocks (AMD, BAC, MSFT) falls from the beginning of trading to 12:00:00. 
 GM's and KSS's prices both rise during this same period, on average. Between 12:00:00 and 16:00:00, AMD, BAC, and MSFT increase back to, or even exceed their opening trading price. 
