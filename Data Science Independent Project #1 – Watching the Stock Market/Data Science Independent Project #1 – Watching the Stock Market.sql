@@ -68,13 +68,12 @@ SELECT name, MIN(price) FROM stocks GROUP BY name;
 
 -- at closing: --
 
-SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
+SELECT name, datetime, price FROM stocks WHERE datetime BETWEEN '% 09 %' AND '% 23 %' AND datetime LIKE '% 16:00:00' GROUP BY name;
 
 -- or, find the daily average of all prices for each stock (more tedious than the above) --
-SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-09, %' GROUP BY name;
-SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;	
-SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-23, %' GROUP BY name;	
-
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-17, %' GROUP BY name;
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-19, %' GROUP BY name;	
+SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-22, %' GROUP BY name;
 
 -- By hour of the day --
 
