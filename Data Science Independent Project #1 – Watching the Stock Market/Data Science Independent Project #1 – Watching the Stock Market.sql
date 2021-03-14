@@ -113,7 +113,11 @@ The 75th and 76th numbers are both $53.5, so their average, and therefore the me
         
 -- Variance --
 SELECT (SUM(price*price) - ((SUM(price)*SUM(price))/COUNT(*))) / (COUNT(*) -1) AS [Price Variance] FROM stocks;
-        
+/* The variance is a measure of variability of the data from the mean, and is calculated (using the computational formula) as the average of the squared differences from the mean.
+The numerator is simply the sum of the squares of each price with itself minus the squared sum of each price divided by the total records (to find the mean). 
+The numerator is then divided by n-1 in the denominator.
+The variance is 5798.223 (variances do not have units, such as '$', and the larger the number, then the larger the dispersion of the data from the mean - which would indicate that the stock prices are more volatile). */
+                                                            
 
 /* Let’s refactor the data into 2 tables - stock_info to store general info about the stock itself (ie. symbol, name) and stock_prices to store the collected data on price (ie. symbol, datetime, price).
 Hint: You can use the SQL CREATE TABLE AS statement to create a table by copying the columns of an existing table. 
