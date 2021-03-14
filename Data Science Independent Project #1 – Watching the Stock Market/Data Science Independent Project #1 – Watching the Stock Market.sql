@@ -75,7 +75,7 @@ SELECT name, datetime, AVG(price) FROM stocks WHERE datetime LIKE '2021-02-22, %
 From then onwards, though, it is difficult to establish a solid trend shared by the stocks since all (apart from Bank of America) are up and down during the middle period of the week. 
 The exception to this is Bank of America’s tock whose price actually increases during the week, and ends the week with a higher price than the one it began with.
 
-In all, it stands to reason that there may be, at best, only a week correlation between the day of the week and stock prices as prices for most stocks are higher at tht start of the week than at the end.
+In all, it stands to reason that there may be, at best, only a week correlation between the day of the week and stock prices as prices for most stocks are higher at the start of the week than at the end.
 */  
 
 -- By hour of the day --
