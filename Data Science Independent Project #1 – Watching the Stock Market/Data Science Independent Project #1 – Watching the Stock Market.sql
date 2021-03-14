@@ -79,11 +79,9 @@ In all, it stands to reason that there may be, at best, only a week correlation 
 */  
 
 -- By hour of the day --
-
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 9:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 12:00:00' GROUP BY name;
 SELECT name, datetime, price FROM stocks WHERE datetime LIKE '% 16:00:00' GROUP BY name;
-
 
 /* From the result set of the previous three lines of code, average stock prices for 3 of the 5 stocks (AMD, BAC, MSFT) falls from the beginning of trading to 12:00:00. 
 GM's and KSS's prices both rise during this same period, on average. Between 12:00:00 and 16:00:00, AMD, BAC, and MSFT increase back to, or even exceed their opening trading price. 
@@ -91,7 +89,6 @@ GM and KSS continue with their upward momentum from earlier in the day during th
 
 
 /* Which of the rows have a price greater than the average of all prices in the dataset? */
-
 SELECT * FROM stocks
 WHERE price > (SELECT AVG(price) FROM stocks);
 -- Only Microsoft's stock prices during the period were above the average of all prices in the dataset. -- 
@@ -100,7 +97,6 @@ WHERE price > (SELECT AVG(price) FROM stocks);
                                                                        /* Advanced Challenge */
 
 /* In addition to the built-in aggregate functions, explore ways to calculate other key statistics about the data, such as the median or variance. */
-
 -- Median --
 SELECT AVG(price) 
 FROM (SELECT price
@@ -109,6 +105,12 @@ ORDER BY price
 LIMIT 2
 OFFSET (SELECT (COUNT(*) -1) / 2 FROM stocks));
 
+/* Since there are an even number of records (150) in the 'stocks' table, there are two prices that are in the middle of the table.
+To find the median price, I used the 'AVG' syntax on the two values. 
+In the subquery, I ordered the prices in ascending order, used the 'LIMIT' syntax to return only two values, and specified exactly which two values (75th and 76th numbers in the table) I want the average of with the 'OFFSET' syntax. 
+The 75th and 76th numbers are both $53.5, so their average, and therefore the median of the data, is $53.5. */
+
+        
 -- Variance --
 SELECT (SUM(price*price) - ((SUM(price)*SUM(price))/COUNT(*))) / (COUNT(*) -1) AS [Price Variance] FROM stocks;
         
