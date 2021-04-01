@@ -65,7 +65,17 @@ WHERE stadium = 'National Stadium, Warsaw';
 -- More difficult questions: --
 
 
-/* The example query shows all goals scored in the Germany-Greece quarterfinal.
+/* 8) The example query shows all goals scored in the Germany-Greece quarterfinal.
 Instead show the name of all players who scored a goal against Germany. */
+
+
+
+
+/* 9) Show teamname and the total number of goals scored. */
+
+SELECT teamname, COUNT(teamid)
+FROM eteam JOIN goal ON id=teamid
+GROUP BY teamname 
+ORDER BY teamname;
 
 
