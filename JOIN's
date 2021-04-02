@@ -77,5 +77,5 @@ SELECT teamname, COUNT(teamid)
 FROM eteam JOIN goal ON id=teamid
 GROUP BY teamname 
 ORDER BY teamname;
-
+-- I've not included player column as there are multiple players who have scored goals for their respective countries. --
 
