@@ -116,5 +116,5 @@ CASE WHEN teamid = team1 THEN 1 ELSE 0 END AS score1,
 CASE WHEN teamid = team2 THEN 1 ELSE 0 END AS score2 
 FROM game 
 JOIN goal ON id = matchid
-ORDER BY mdate, matchid,team1, team2
+ORDER BY mdate, team1, team2
 ; 
