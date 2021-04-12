@@ -161,3 +161,9 @@ WHERE stadium = 'National Stadium, Warsaw' AND (team1='POL' OR team2='POL') AND 
 
 /* Select the code which shows the player, their team and the time they scored, for players who have played in Stadion Miejski (Wroclaw) but not against Italy(ITA) */
 
+SELECT player, teamid, gtime
+FROM goal
+JOIN game ON goal.matchid = game.id
+WHERE stadium = 'Stadion Miejski (Wroclaw)' AND NOT team1 ='ITA' AND NOT team2 ='ITA';
+
+/* END */
