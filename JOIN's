@@ -118,3 +118,46 @@ FROM game
 JOIN goal ON id = matchid
 ORDER BY mdate, team1, team2
 ; 
+
+
+                                                        /* Quiz */
+
+
+/* You want to find the stadium where player 'Dimitris Salpingidis' scored. Select the JOIN condition to use: */
+
+SELECT DISTINCT(stadium) 
+FROM game 
+JOIN goal ON game.id=goal.matchid;
+
+
+/* You JOIN the tables goal and eteam in an SQL statement. Indicate the list of column names that may be used in the SELECT line: */
+
+SELECT DISTINCT (stadium) 
+FROM game 
+JOIN goal ON game.id=goal.matchid;
+
+
+/* You JOIN the tables goal and eteam in an SQL statement. Indicate the list of column names that may be used in the SELECT line: */
+
+matchid, teamid, player, gtime, id, teamname, coach
+
+
+/* Select the code which shows players, their team and the amount of goals they scored against Greece(GRE). */
+
+SELECT player, teamid, COUNT(matchid)
+FROM goal
+JOIN game ON goal.matchid=game.id
+WHERE NOT team1='GRE' OR NOT team2='GRE'
+GROUP BY player; 
+
+
+/* Select the code which would show the player and their team for those who have scored against Poland(POL) in National Stadium, Warsaw. */
+
+SELECT player, teamid
+FROM goal 
+JOIN game ON goal.matchid = game.id	
+WHERE stadium = 'National Stadium, Warsaw' AND (team1='POL' OR team2='POL') AND NOT teamid = 'POL';
+
+
+/* Select the code which shows the player, their team and the time they scored, for players who have played in Stadion Miejski (Wroclaw) but not against Italy(ITA) */
+
