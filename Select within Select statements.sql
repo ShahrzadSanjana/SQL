@@ -48,4 +48,9 @@ WHERE gdp > (SELECT MAX (gdp) FROM world WHERE continent = 'EUROPE' AND gdp IS N
 /* 7) Find the largest country (by area) in each continent, show the continent, the name and the area */
 
 
+SELECT continent, name, area FROM world y
+WHERE area >= ALL
+(SELECT area FROM world x
+WHERE y.continent=x.continent
+AND area>0);
 
