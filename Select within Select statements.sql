@@ -47,10 +47,21 @@ WHERE gdp > (SELECT MAX (gdp) FROM world WHERE continent = 'EUROPE' AND gdp IS N
 
 /* 7) Find the largest country (by area) in each continent, show the continent, the name and the area */
 
-
 SELECT continent, name, area FROM world as x
 WHERE area >= ALL
 (SELECT area FROM world as y
 WHERE x.continent=y.continent
 AND area>0);
+
+
+
+
+                                                /* https://sqlzoo.net/wiki/Using_nested_SELECT */
+
+/* 1) List each country in the same continent as 'Brazil'. */
+
+SELECT name 
+FROM world
+WHERE continent IN (SELECT continent FROM world WHERE name = 'Brazil');
+
 
