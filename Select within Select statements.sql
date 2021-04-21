@@ -74,6 +74,10 @@ WHERE continent IN (SELECT continent FROM world WHERE name = 'Brazil' OR name = 
 
 /* 3) Show the population of China as a multiple of the population of the United Kingdom */
 
+SELECT name, population/(SELECT population FROM world
+WHERE name='United Kingdom') AS multiple_of_UK_population
+FROM world
+WHERE name = 'China';
 
 
 /* 4) Show each country that has a population greater than the population of ALL countries in Europe. Note that we mean greater than every single country in Europe; not the combined population of Europe.*/
