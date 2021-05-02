@@ -1,6 +1,6 @@
                                               /* https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial */
                                               
-/* This tutorial looks at how we can use SELECT statements within SELECT statements to perform more complex queries. */
+/* This tutorial looks at how SELECT within SELECT statementsare used in performing more complex queries. */
 
 
 /* 1) List each country name where the population is larger than that of 'Russia'. 
