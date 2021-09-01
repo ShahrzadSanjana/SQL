@@ -35,5 +35,12 @@ WHERE dept.name IS NOT NULL;
 /* 5) Use COALESCE to print the mobile number. Use the number '07986 444 2266' if there is no number given. Show teacher name and mobile number or '07986 444 2266' */
 
 
+/* 8) Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed. */
 
+SELECT dept.name, COUNT(teacher.dept)
+FROM teacher
+RIGHT JOIN dept
+ON teacher.dept=dept.id
+GROUP BY dept.name
+;
  
