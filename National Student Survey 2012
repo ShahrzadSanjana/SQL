@@ -1,0 +1,27 @@
+/* https://sqlzoo.net/wiki/NSS_Tutorial */
+                                /* National Student Survey (NSS) Tutorial */
+
+/* 1) The example shows the number who responded for:
+question 1,
+at 'Edinburgh Napier University',
+studying '(8) Computer Science'
+Show the the percentage who STRONGLY AGREE */
+
+SELECT response, A_STRONGLY_AGREE
+FROM nss
+WHERE question='Q01'
+AND institution='Edinburgh Napier University'
+AND subject='(8) Computer Science';
+
+
+/* 2) Show the institution and subject where the score is at least 100 for question 15. */
+
+SELECT institution, subject
+FROM nss
+WHERE score >= 100
+AND question = 'Q15';
+
+
+/* 3) Show the institution and score where the score for '(8) Computer Science' is less than 50 for question 'Q15' */
+
+
