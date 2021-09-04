@@ -1,5 +1,5 @@
 /* https://sqlzoo.net/wiki/NSS_Tutorial */
-                                /* National Student Survey (NSS) Tutorial */
+/* National Student Survey (NSS) Tutorial */
 
 /* 1) The example shows the number who responded for:
 question 1,
@@ -24,4 +24,12 @@ AND question = 'Q15';
 
 /* 3) Show the institution and score where the score for '(8) Computer Science' is less than 50 for question 'Q15' */
 
+SELECT institution, score
+FROM nss
+WHERE subject = '(8) Computer Science'
+AND question = 'Q15'
+AND score < 50;
+
+
+/* 4) Show the subject and total number of students who responded to question 22 for each of the subjects '(8) Computer Science' and '(H) Creative Arts and Design'. */
 
