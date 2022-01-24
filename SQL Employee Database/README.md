@@ -4,7 +4,7 @@ I am regularly looking for projects to improve and demonstrate my progress as a 
 I used Microsoft SQL Server Management Studio for the entire project; from creating the database and tables, to importing data and writing queries and, as such, the following commentary applies to this program in particular. 
 
 
-SELECT employees.emp_no, last_name, first_name, sex, salary
+```sql SELECT employees.emp_no, last_name, first_name, sex, salary
 FROM employees
 JOIN salaries 
-ON employees.emp_no=salaries.emp_no;
+ON employees.emp_no=salaries.emp_no; ```
