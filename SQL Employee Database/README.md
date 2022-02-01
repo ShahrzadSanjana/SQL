@@ -32,6 +32,24 @@ INSERT INTO titles VALUES ('s0001', 'Staff'), ('s0002', 'Senior Staff'), ('e0001
 
 ```
 
+Creating foreign keys:
+
+```sql
+ALTER TABLE "dept_emp" ADD CONSTRAINT "FK_dept_emp_emp_no" FOREIGN KEY ("emp_no") REFERENCES "employees" ("emp_no"); 
+
+ALTER TABLE "dept_emp" ADD CONSTRAINT "FK_dept_emp_dept_no" FOREIGN KEY ("dept_no") REFERENCES "departments" ("dept_no");
+
+ALTER TABLE "dept_manager" ADD CONSTRAINT "FK_dept_manager_dept_no" FOREIGN KEY ("dept_no") REFERENCES "departments" ("dept_no");
+
+
+ALTER TABLE "titles" ADD PRIMARY KEY ("title_id");
+ALTER TABLE "employees" ADD CONSTRAINT "FK_employees_emp_title" FOREIGN KEY ("emp_title_id") REFERENCES "titles" ("title_id");
+
+ALTER TABLE "salaries" ADD CONSTRAINT "FK_salaries_emp_no" FOREIGN KEY ("emp_no") REFERENCES "employees" ("emp_no");
+
+ALTER TABLE "dept_manager" ADD CONSTRAINT "FK_dept_manager_emp_no" FOREIGN KEY ("emp_no") REFERENCES "employees" ("emp_no");
+
+```
 
 **Data Analysis**
 
