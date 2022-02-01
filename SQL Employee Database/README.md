@@ -5,7 +5,24 @@ I am regularly looking for projects to improve and demonstrate my progress as a 
 
 **Data Engineering**
 
+1. Use the information to create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
+2. Import each CSV file into the corresponding SQL table.
 
+I created tables using either SQL syntax (for tables containing only a few rows of data) or through the 'Import flat file' method in SQL Server (in order to create **and** import larger tables of data).   
+
+Here are a few tables created using SQL syntax, followed by my syntax to establish foreign keys between tables.
+
+```sql
+USE employee_project;
+
+CREATE TABLE "dept_manager" ("dept_no" NVARCHAR(50) NOT NULL, "emp_no" INT NOT NULL)
+INSERT INTO "dept_manager" VALUES('d001', 110022),
+('d001', 110039), ('d002', 110085), ('d002', 110114), ('d003', 110183), ('d003', 110228), ('d004', 110303), ('d004', 110344),
+('d004', 110386), ('d004', 110420), ('d005', 110511), ('d005', 110567), ('d006', 110725), ('d006', 110765), ('d006', 110800),
+('d006', 110854), ('d007', 111035), ('d007', 111133), ('d008', 111400), ('d008', 111534), ('d009', 111692), ('d009', 111784),
+('d009', 111877), ('d009', 111939);
+
+SELECT * FROM dept_manager; ```
 
 **Data Analysis**
 
