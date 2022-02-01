@@ -10,7 +10,7 @@ I am regularly looking for projects to improve and demonstrate my progress as a 
 
 I created tables using either SQL syntax (for tables containing only a few rows of data) or through the 'Import flat file' method in SQL Server (in order to create **and** import larger tables of data).   
 
-Here are a few tables created using SQL syntax, followed by my syntax to establish foreign keys between tables.
+Here are a few tables created imported data into using SQL syntax, followed by my syntax to establish foreign keys between tables.
 
 ```sql
 USE employee_project;
@@ -22,7 +22,16 @@ INSERT INTO "dept_manager" VALUES('d001', 110022),
 ('d006', 110854), ('d007', 111035), ('d007', 111133), ('d008', 111400), ('d008', 111534), ('d009', 111692), ('d009', 111784),
 ('d009', 111877), ('d009', 111939);
 
-SELECT * FROM dept_manager; ```
+SELECT * FROM dept_manager; 
+```
+```sql
+CREATE TABLE "titles" ("title_id" VARCHAR(10) NOT NULL, "title" VARCHAR(50) NOT NULL);
+
+INSERT INTO titles VALUES ('s0001', 'Staff'), ('s0002', 'Senior Staff'), ('e0001', 'Assistant Engineer'), ('e0002', 'Engineer'),
+('e0003', 'Senior Engineer'), ('e0004', 'Technique Leader'), ('m0001', 'Manager');
+
+```
+
 
 **Data Analysis**
 
