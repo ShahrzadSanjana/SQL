@@ -24,12 +24,12 @@ INSERT INTO "dept_manager" VALUES('d001', 110022),
 
 SELECT * FROM dept_manager; 
 ```
+
 ```sql
 CREATE TABLE "titles" ("title_id" VARCHAR(10) NOT NULL, "title" VARCHAR(50) NOT NULL);
 
 INSERT INTO titles VALUES ('s0001', 'Staff'), ('s0002', 'Senior Staff'), ('e0001', 'Assistant Engineer'), ('e0002', 'Engineer'),
 ('e0003', 'Senior Engineer'), ('e0004', 'Technique Leader'), ('m0001', 'Manager');
-
 ```
 
 Creating foreign keys:
@@ -49,6 +49,13 @@ ALTER TABLE "salaries" ADD CONSTRAINT "FK_salaries_emp_no" FOREIGN KEY ("emp_no"
 
 ALTER TABLE "dept_manager" ADD CONSTRAINT "FK_dept_manager_emp_no" FOREIGN KEY ("emp_no") REFERENCES "employees" ("emp_no");
 
+-- Query * FROM Each Table Confirming Data
+SELECT * FROM departments;
+SELECT * FROM dept_emp;
+SELECT * FROM dept_manager;
+SELECT * FROM employees;
+SELECT * FROM salaries;
+SELECT * FROM titles;
 ```
 
 **Data Analysis**
