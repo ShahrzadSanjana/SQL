@@ -1,1 +1,31 @@
+```sql CREATE DATABASE "movie_theatres";
 
+CREATE TABLE "Movies" ("Code" INT PRIMARY KEY NOT NULL, "Title" VARCHAR(255) NOT NULL, "Rating" VARCHAR(255));
+
+CREATE TABLE "MovieTheaters" ("Code" INT PRIMARY KEY, "Name" VARCHAR(255) NOT NULL, "Movie" INT FOREIGN KEY (Movie) REFERENCES Movies(Code)) ;
+
+INSERT INTO Movies VALUES 
+(1,'Citizen Kane','PG'),
+(2,'Singin'' in the Rain','G'),
+(3,'The Wizard of Oz','G'),
+(4,'The Quiet Man',NULL),
+(5,'North by Northwest',NULL),	
+(6,'The Last Tango in Paris','NC-17'),
+(7,'Some Like it Hot','PG-13'),
+(8,'A Night at the Opera',NULL);
+
+INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(1,'Odeon',5);
+ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(2,'Imperial',1);
+ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(3,'Majestic',NULL);
+ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(4,'Royale',6);
+ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(5,'Paraiso',3);
+ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(6,'Nickelodeon',NULL);
+```
+
+
+**Questions**
+
+```sql
+-- 1) Select the title of all movies.
+
+SELECT Title FROM Movies;
