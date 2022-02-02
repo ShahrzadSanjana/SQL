@@ -63,4 +63,33 @@ RIGHT JOIN MovieTheaters
 ON Movies.Code=MovieTheaters.Movie;
 
 
+-- 7) Show the titles of movies not currently being shown in any theaters.
 
+SELECT Title FROM MovieTheaters
+RIGHT JOIN Movies
+ON Movies.Code=MovieTheaters.Movie
+WHERE MovieTheaters.Movie IS NULL; 
+
+-- OR, you could try the following query
+
+SELECT Title FROM Movies
+WHERE Code NOT IN (SELECT Movie FROM MovieTheaters WHERE MOVIE IS NOT NULL);
+
+
+-- 8) Add the unrated movie "One, Two, Three".
+
+INSERT INTO Movies VALUES ('9', 'One,Two,Three', NULL);
+SELECT * FROM movies; 
+
+
+-- 9) Set the rating of all unrated movies to "G".
+
+UPDATE "Movies"
+SET Rating = 'G'
+WHERE Rating IS NULL;
+
+
+-- 10) Remove movie theaters projecting movies rated "NC-17"
+
+DELETE FROM Movies
+WHERE Rating = 'NC-17';
