@@ -1,3 +1,8 @@
+-- https://en.wikibooks.org/wiki/SQL_Exercises/Movie_theatres
+
+**Data Engineering**
+Creating the database, its' tables, and populating them with data in order to darry out database analysis. 
+
 ```sql CREATE DATABASE "movie_theatres";
 
 CREATE TABLE "Movies" ("Code" INT PRIMARY KEY NOT NULL, "Title" VARCHAR(255) NOT NULL, "Rating" VARCHAR(255));
@@ -23,7 +28,7 @@ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(1,'Odeon',5);
 ```
 
 
-**Questions**
+**Data Analysis - Questions**
 
 ```sql
 -- 1) Select the title of all movies.
