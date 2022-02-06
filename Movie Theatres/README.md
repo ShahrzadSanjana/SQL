@@ -1,6 +1,7 @@
 -- https://en.wikibooks.org/wiki/SQL_Exercises/Movie_theatres
 
 **Data Engineering**
+
 Creating the database, its' tables, and populating them with data in order to darry out database analysis. 
 
 ```sql CREATE DATABASE "movie_theatres";
@@ -26,6 +27,7 @@ INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(1,'Odeon',5);
  INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(5,'Paraiso',3);
  INSERT INTO MovieTheaters(Code,Name,Movie) VALUES(6,'Nickelodeon',NULL);
 ```
+
 
 
 **Data Analysis - Questions**
