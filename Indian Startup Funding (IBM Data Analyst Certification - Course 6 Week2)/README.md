@@ -1,7 +1,7 @@
 # Indian Startup Funding 
 
 -- Write SQL query to find AmountinUSD, where City location equals “Bengaluru”
-SELECT AmountinUSD, CityLocation
+``` SELECT AmountinUSD, CityLocation
 FROM indian_startup_funding
 WHERE CityLocation = "Bengaluru";
 
