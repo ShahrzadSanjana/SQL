@@ -1,7 +1,6 @@
 # Indian Startup Funding 
 
--- Write SQL query to find AmountinUSD, where City location equals “Bengaluru”
-
+-- 1. Write SQL query to find AmountinUSD, where City location equals “Bengaluru”
 ```sql 
 SELECT AmountinUSD, CityLocation
 FROM indian_startup_funding
@@ -16,46 +15,54 @@ ORDER BY StartupName DESC;
 ```
 
 -- 3. Write SQL query to find AmountinUSD, where City location equals “Bengaluru” and AmountinUSD>380000
-SELECT AmountinUSD, CityLocation
+```sql SELECT AmountinUSD, CityLocation
 FROM indian_startup_funding
 WHERE CityLocation = "Bengaluru" AND AmountinUSD>"380000";
+```
 
 -- 4. Write SQL query to get all CityLocations that has an AmountinUSD >380000
-SELECT CityLocation, AmountinUSD
+```sqlSELECT CityLocation, AmountinUSD
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
 ORDER BY CityLocation ASC;
+```
 
 -- 5. Write SQL query to get only unique CityLocations that has an AmountinUSD >380000
 SELECT DISTINCT(CityLocation)
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
 ORDER BY CityLocation ASC;
-
+```
 -- 6. Write SQL query to get all StartupNames where AmountinUSD<380000
-SELECT StartupName, AmountinUSD
+```sql SELECT StartupName, AmountinUSD
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
 ORDER BY StartupName ASC;
+```
 
 --7. Write SQL query to sort the output from the previous question DESC
+```sql
 SELECT StartupName, AmountinUSD
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
 ORDER BY StartupName ASC, AmountinUSD ASC;
+```
 
 /* 8. Write SQL query to get the funding AmountinUSD for each IndustryVertical that starts with 
 letter “A” and sort the output DESC by the AmountinUSD */
+```sql
 SELECT IndustryVertical, SUM(AmountinUSD)
 FROM indian_startup_funding
 WHERE IndustryVertical LIKE "A%"
 GROUP BY IndustryVertical
 ORDER BY AmountinUSD DESC;
 
+or,
+
 SELECT SUM(AmountinUSD)
 FROM indian_startup_funding
 WHERE IndustryVertical = "Automobile";
-
+```
 -- 9. Write SQL query to count all the start_ups in the Education field
 SELECT IndustryVertical, COUNT(DISTINCT(StartupName))
 FROM indian_startup_funding
