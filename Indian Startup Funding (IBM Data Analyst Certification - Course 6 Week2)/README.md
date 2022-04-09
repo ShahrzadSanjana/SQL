@@ -2,13 +2,15 @@
 
 -- Write SQL query to find AmountinUSD, where City location equals “Bengaluru”
 
-```sql SELECT AmountinUSD, CityLocation
+```sql 
+SELECT AmountinUSD, CityLocation
 FROM indian_startup_funding
 WHERE CityLocation = "Bengaluru";
 ```
 
 -- 2. Write SQL query to sort the table by startup name DESC
-```sql SELECT *
+```sql 
+SELECT *
 FROM indian_startup_funding
 ORDER BY StartupName DESC;
 ```
