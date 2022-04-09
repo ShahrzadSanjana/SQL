@@ -21,13 +21,15 @@ WHERE CityLocation = "Bengaluru" AND AmountinUSD>"380000";
 ```
 
 -- 4. Write SQL query to get all CityLocations that has an AmountinUSD >380000
-```sqlSELECT CityLocation, AmountinUSD
+```sql
+SELECT CityLocation, AmountinUSD
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
 ORDER BY CityLocation ASC;
 ```
 
 -- 5. Write SQL query to get only unique CityLocations that has an AmountinUSD >380000
+```sql
 SELECT DISTINCT(CityLocation)
 FROM indian_startup_funding
 WHERE AmountinUSD > "380000"
@@ -64,16 +66,22 @@ FROM indian_startup_funding
 WHERE IndustryVertical = "Automobile";
 ```
 -- 9. Write SQL query to count all the start_ups in the Education field
+```sql
 SELECT IndustryVertical, COUNT(DISTINCT(StartupName))
 FROM indian_startup_funding
 WHERE IndustryVertical = "Education";
+```
 
 -- 10. Write SQL query to count all the start_Ups in the E-Commerce field
+```sql
 SELECT IndustryVertical, COUNT(DISTINCT(StartupName))
 FROM indian_startup_funding
 WHERE IndustryVertical LIKE "E-_ommerce";
+```
 
 -- 11. Write SQL query to count all the start_Ups in the E-Commerce field, where city location equals “Bengaluru”
+```sql
 SELECT IndustryVertical, COUNT(DISTINCT(StartupName))
 FROM indian_startup_funding
 WHERE IndustryVertical LIKE "E-_ommerce" AND CityLocation LIKE "Bengaluru%";
+```
